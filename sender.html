@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Food donation system</title>
+ <link rel ="stylesheet" href = "{% static 'homape.css' %}?{% now "U" %}" />
+</head>
+<body>
+<h1>Online food donation</h1>
+
+	<form method = "POST" enctype="multipart/form-data"> {% csrf_token %}
+		{{ form }}
+        <label for="image">Upload the image of food:</label>
+        <input type="file" name="image" /><br>
+        <label for="title">Enter the name of the food item:</label>
+  <input type="text" id="title" name="title" style="text-transform:uppercase"><br>
+        <label for="phonenumber">Enter your phone number:</label>
+  <input type="text" id="phonenumber" name="phonenumber"><br>
+        <label for="hmhrsback">How many hours back food was cooked:</label>
+  <input type="text" id="hmhrsback" name="hmhrsback"><br>
+        <label for="quantity">Quantity in kgs:</label>
+  <input type="text" id="quantity" name="quantity"><br>
+        <label for="address">Enter your address:</label>
+<textarea id="address" name="address" rows="4" cols="50"> </textarea>
+  <br><br>
+    <br><br><br>
+
+		<button class="glow-on-hover" type="submit">Upload</button>
+	</form>
+
+
+
+</body>
+</html>

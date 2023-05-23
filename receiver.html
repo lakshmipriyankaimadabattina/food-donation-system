@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel ="stylesheet" href = "{% static 'receiver.css' %}?{% now "U" %}" />
+</head>
+<body>
+<form  method="post">
+{% for i in post %}
+
+<div class="container">
+<table class = "iddd">
+
+    <tr>
+    <td rowspan="5"><img width="200" height="200" src="{{i.image.url}}" ></td>
+        <td>Name of the item: </td>
+    <td>{{ i.title}}</td>
+  </tr>
+    <tr class="phno" style="display:none">
+    <td>Phone number:</td>
+    <td>{{ i.phonenumber }}</td>
+  </tr>
+    <tr>
+    <td>Time: </td>
+    <td>{{ i.hmhrsback }}</td>
+  </tr>
+    </tr>
+    <tr>
+    <td>Quantity:</td>
+    <td> {{ i.quantity }}</td>
+  </tr>
+    </tr>
+    <tr>
+    <td>Address:</td>
+    <td> {{ i.address }}</td>
+  </tr>
+    </table>
+<button class="btn" type="submit">Book Now </button>
+    </div>
+    </form>
+<script>
+            phno = document.getElementsByClassName("phno");
+            btn = document.getElementsByClassName("btn");
+            console.log(btn);
+            table = document.getElementsByClassName("iddd");
+            console.log(table);
+
+            for(let i=0; i<btn.length; i++) {
+                btn[i].addEventListener("click",function() {
+                table[i].style.backgroundColor = "red";
+                btn[i].disabled = true;
+                phno[i].style.display = "inline-block";
+
+
+})
+}
+        </script>
+     <br>
+       <br>
+      <br>
+{% endfor %}
+
+</body>
+</html>

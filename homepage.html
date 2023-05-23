@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+{% load static %}
+    <head>
+   <link rel ="stylesheet" href = "{% static 'homape.css' %}?{% now "U" %}" />
+        <title>food donation</title>
+
+    </head>
+<body>
+<h1>Online food donation</h1>
+
+<img src="{% static 'images/mother-teresa-3504.jpg' %}" >
+    <br>
+
+<a href="/sender">
+  <input class = "admin1" type=button onClick="/sender" value='Donar login'>
+</a>
+    <br>
+    <br>
+    <br>
+
+<a href="/receive">
+  <input class = "user1" type=button onClick="/sender" value='Acceptor login'>
+</a>
+
+</body>
+    <br>
+    <footer>
+  <p>Designed and devolped by Socratic team</p>
+  <p><a href="9919004267@klu.ac.in">for queries contact :9919004267@klu.ac.in</a></p>
+</footer>
+</html>
